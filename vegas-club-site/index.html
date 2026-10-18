@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Fabulous Vegas Club | Westdene, Bloemfontein</title>
+<meta name="description" content="Food, cocktails and late-night vibes in Westdene, Bloemfontein. Open daily 11am to 4am. Book a table on WhatsApp.">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  :root{
+    --bg:#0b0615; --bg2:#140a26; --text:#f4eefc; --muted:#b8a9d4;
+    --pink:#ff2bd6; --cyan:#22e6ff; --green:#3dff9a; --gold:#ffcf4a;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1050px;margin:0 auto;padding:0 20px}
+  section{padding:64px 0}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15}
+  h2{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:8px}
+  .eyebrow{color:var(--cyan);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+  .lead{color:var(--muted);max-width:60ch;margin-bottom:28px}
+  .glow{text-shadow:0 0 8px var(--pink),0 0 24px var(--pink)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(11,6,21,.88);backdrop-filter:blur(10px);border-bottom:1px solid #ffffff14}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-family:Georgia,serif;font-weight:700;letter-spacing:.04em}
+  .logo span{color:var(--pink)}
+  nav ul{display:flex;gap:22px;list-style:none;font-size:.92rem;color:var(--muted)}
+  nav ul a:hover{color:var(--text)}
+  @media(max-width:700px){nav ul{display:none}}
+
+  /* buttons */
+  .btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:600;border:2px solid var(--pink);transition:.2s}
+  .btn.primary{background:var(--pink);color:#18001a;box-shadow:0 0 22px #ff2bd666}
+  .btn.primary:hover{box-shadow:0 0 34px #ff2bd6bb;transform:translateY(-1px)}
+  .btn.ghost{color:var(--text);border-color:#ffffff40}
+  .btn.ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+  /* hero */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;text-align:center;
+    background:
+      radial-gradient(60% 50% at 20% 20%,#ff2bd633,transparent 70%),
+      radial-gradient(50% 45% at 85% 30%,#22e6ff2e,transparent 70%),
+      radial-gradient(60% 50% at 50% 100%,#3dff9a22,transparent 70%),
+      linear-gradient(180deg,#0b0615,#160a2c)}
+  .hero{overflow:hidden;isolation:isolate}
+  .hero-slides{position:absolute;inset:0;z-index:-2;overflow:hidden}
+  .hero-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:heroFade 18s infinite;will-change:opacity,transform}
+  .hero-slides img:nth-child(1){animation-delay:-1s;object-position:center 82%}
+  .hero-slides img:nth-child(2){animation-delay:6s;object-position:center 35%}
+  .hero-slides img:nth-child(3){animation-delay:12s;object-position:center 55%}
+  @keyframes heroFade{0%{opacity:0;transform:scale(1)}5.5%{opacity:1}33.3%{opacity:1}39%{opacity:0;transform:scale(1.08)}100%{opacity:0;transform:scale(1.08)}}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(180deg,#0b061573 0%,#0b061547 35%,#0b061538 60%,#0b0615bf 100%)}
+  .hero .wrap{position:relative;z-index:1;padding-top:28px;padding-bottom:28px}
+  .hero-logo{display:block;width:min(540px,84vw);height:auto;margin:16px auto 10px;filter:drop-shadow(0 8px 28px #000c) drop-shadow(0 0 22px #ff2bd655)}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .hero p{color:#e3d9f5;max-width:52ch;margin:0 auto 28px;font-size:1.1rem;text-shadow:0 2px 12px #000a}
+  @media(prefers-reduced-motion:reduce){.hero-slides img{animation:none}.hero-slides img:first-child{opacity:1}}
+  .hero .actions{justify-content:center}
+  .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border:1px solid #ffffff30;border-radius:999px;font-size:.85rem;color:#e3d9f5;background:#0b061599;backdrop-filter:blur(6px)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+  .stars{color:var(--gold)}
+
+  /* cards */
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--bg2);border:1px solid #ffffff12;border-radius:var(--radius);padding:24px}
+  .card h3{font-size:1.2rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.95rem}
+  .tag{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+
+  /* menu */
+  .menu-list{display:grid;gap:10px}
+  .menu-item{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px dashed #ffffff22}
+  .menu-tabs{display:none;gap:8px;overflow-x:auto;margin-bottom:26px;padding-bottom:6px;scrollbar-width:thin}
+  .js .menu-tabs{display:flex}
+  .tab{flex:0 0 auto;font:inherit;font-size:.92rem;font-weight:600;color:var(--muted);background:transparent;border:1.5px solid #ffffff2e;border-radius:999px;padding:9px 18px;cursor:pointer;transition:.2s}
+  .tab:hover{color:var(--text);border-color:var(--cyan)}
+  .tab.active{background:var(--pink);border-color:var(--pink);color:#18001a;box-shadow:0 0 18px #ff2bd655}
+  .menu-panel{margin-bottom:34px}
+  .js .menu-panel{margin-bottom:0}
+  .js .menu-panel:not(.active){display:none}
+  .menu-cat{font-size:1.5rem;color:var(--gold);margin-bottom:4px}
+  .menu-note{color:var(--cyan);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+  .menu-item b{font-weight:600}
+  .menu-item small{display:block;color:var(--muted)}
+  .price{color:var(--gold);white-space:nowrap}
+  .todo{outline:1px dashed var(--gold);outline-offset:3px;border-radius:4px}
+
+  /* specials, video features */
+  .video-card{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid #ffffff1a;background:#000;margin:0 auto 22px;max-width:780px}
+  .video-card video{display:block;width:100%;aspect-ratio:16/9;max-height:460px;object-fit:cover}
+  .video-card .cap{position:absolute;left:0;right:0;bottom:0;padding:38px 20px 14px;background:linear-gradient(180deg,transparent,#000c);font-size:.88rem;pointer-events:none}
+  .special-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+  .special{background:#140a26;border:1px solid #ffffff1a;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+  .special:hover{transform:translateY(-3px);border-color:#ff2bd688;box-shadow:0 0 28px #ff2bd633}
+  .special .media{position:relative}
+  .special .media img,.special .media video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+  .ribbon{position:absolute;top:12px;left:12px;z-index:1;background:var(--pink);color:#18001a;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;box-shadow:0 0 16px #ff2bd699}
+  .special .body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .special .when{color:var(--cyan);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+  .special h4{font-family:Georgia,serif;font-size:1.3rem;line-height:1.2}
+  .special p{color:var(--muted);font-size:.94rem}
+  .special .deal{color:var(--gold);font-weight:700;font-size:1.05rem}
+  .special ul{list-style:none;margin-top:4px}
+  .special li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed #ffffff22;font-size:.94rem}
+  .special li:last-child{border-bottom:0}
+  .days{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .days span{font-size:.78rem;font-weight:600;padding:4px 11px;border-radius:999px;background:#ff2bd62e;border:1px solid #ff2bd677;color:#ffd6f6}
+  .special.wide{flex-direction:row}
+  .special.wide .media{flex:0 0 250px}
+  .special.wide .media video{aspect-ratio:4/5;height:100%}
+  .special.wide .body{justify-content:center;gap:10px;padding:26px 30px}
+  .special.wide h4{font-size:1.9rem}
+  .special.wide .deal{font-size:1.4rem}
+  .special.wide .actions{margin-top:8px}
+  @media(max-width:640px){
+    .special.wide{flex-direction:column}
+    .special.wide .media{flex:none}
+    .special.wide .media video{aspect-ratio:4/5;max-height:430px}
+  }
+
+  /* drinks & cocktails */
+  .drinks{position:relative;overflow:hidden;
+    background:
+      radial-gradient(55% 60% at 12% 0%,#ff2bd633,transparent 70%),
+      radial-gradient(50% 55% at 95% 100%,#22e6ff29,transparent 70%),
+      #0e0620}
+  .drinks-head{display:flex;align-items:center;gap:18px;margin-bottom:8px}
+  .drinks-head svg{flex:0 0 auto;width:54px;height:54px;filter:drop-shadow(0 0 8px var(--pink)) drop-shadow(0 0 18px #ff2bd699)}
+  .drinks h2{margin-bottom:0}
+  .sub-title{font-family:Georgia,serif;font-size:1.25rem;color:var(--gold);margin:34px 0 14px;display:flex;align-items:center;gap:12px}
+  .sub-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#ffcf4a66,transparent)}
+  .cocktail-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+  .cocktail{position:relative;border-radius:var(--radius);padding:24px 22px;border:1px solid #ff2bd666;
+    background:linear-gradient(160deg,#ff2bd626,#140a26 65%);box-shadow:0 0 26px #ff2bd622,inset 0 0 22px #ff2bd612;transition:.25s}
+  .cocktail:hover{transform:translateY(-3px);box-shadow:0 0 36px #ff2bd655,inset 0 0 22px #ff2bd620}
+  .cocktail .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+  .cocktail h4{font-family:Georgia,serif;font-size:1.2rem}
+  .cocktail p{color:var(--muted);font-size:.92rem;margin-top:6px}
+  .cocktail .badge{display:inline-block;margin-top:12px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);border:1px solid #22e6ff55;border-radius:999px;padding:3px 10px}
+  .bar-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .bar-card{background:#140a26cc;border:1px solid #22e6ff33;border-radius:var(--radius);padding:22px}
+  .bar-card h4{font-family:Georgia,serif;font-size:1.15rem;color:var(--cyan);margin-bottom:6px}
+  .bar-card .menu-item{padding:10px 0}
+  .bar-card .menu-item:last-child{border-bottom:0}
+
+  /* gallery */
+  .gallery{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  @media(min-width:980px){.gallery{grid-template-columns:repeat(5,1fr)}}
+  .tile{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;border:1px solid #ffffff1c;background:#140a26;isolation:isolate}
+  .tile>img,.tile>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .tile .label{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:48px 16px 14px;background:linear-gradient(180deg,transparent,#000d);font-size:.92rem;font-weight:600;letter-spacing:.02em;pointer-events:none}
+  .tile .label small{display:block;font-weight:400;color:#ffffffb8;font-size:.78rem;letter-spacing:0}
+  .fade img{opacity:0;animation:fade3 9s infinite}
+  .fade img:nth-child(2){animation-delay:3s}
+  .fade img:nth-child(3){animation-delay:6s}
+  @keyframes fade3{0%{opacity:0}8%{opacity:1}33%{opacity:1}41%{opacity:0}100%{opacity:0}}
+  /* slot machine tile */
+  .slots{background:radial-gradient(70% 55% at 50% 38%,#ff2bd645,transparent 72%),linear-gradient(180deg,#1b0a35,#0b0615)}
+  .machine{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:18px 16px 60px}
+  .m-top{font-family:Georgia,serif;font-weight:700;letter-spacing:.2em;font-size:1.05rem;color:var(--gold);text-shadow:0 0 10px #ffcf4a,0 0 24px #ff9b00}
+  .m-body{width:min(82%,230px);padding:14px 12px 16px;border-radius:18px;border:2px solid var(--pink);background:linear-gradient(180deg,#2c1050,#12062a);box-shadow:0 0 24px #ff2bd688,inset 0 0 18px #ff2bd633}
+  .m-reels{display:flex;gap:6px;padding:8px;border-radius:10px;background:#050210;border:2px solid #22e6ff88;box-shadow:inset 0 0 14px #000}
+  .reel{flex:1;height:64px;overflow:hidden;border-radius:6px;background:linear-gradient(180deg,#9a9aa6,#fff 35%,#fff 65%,#9a9aa6)}
+  .strip{display:flex;flex-direction:column;animation:spin var(--d,1.6s) steps(6) infinite}
+  .strip span{flex:0 0 64px;height:64px;display:grid;place-items:center;font:900 2.1rem/1 Georgia,serif}
+  .strip .bar{display:block;box-sizing:border-box;width:calc(100% - 6px);padding:4px 0;text-align:center;font:900 .62rem/1 Arial,sans-serif;letter-spacing:0;color:#111;border:2px solid #111;border-radius:3px}
+  @keyframes spin{to{transform:translateY(-384px)}}
+  .m-lights{display:flex;justify-content:space-between;margin-top:12px}
+  .m-lights i{width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:blink 1.1s infinite}
+  .m-lights i:nth-child(even){animation-delay:.55s;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+  @keyframes blink{50%{opacity:.25}}
+  /* big screen tile */
+  .screen{background:radial-gradient(75% 55% at 50% 38%,#22e6ff3d,transparent 72%),#0b0f26}
+  .screen svg{position:absolute;inset:0;width:100%;height:100%}
+  @media(prefers-reduced-motion:reduce){.fade img{animation:none}.fade img:first-child{opacity:1}.strip,.m-lights i{animation:none}}
+
+  /* bar banner + cocktails */
+  .bar-banner{position:relative;margin:26px 0 0;border-radius:var(--radius);overflow:hidden;border:1px solid #ff2bd655;box-shadow:0 0 30px #ff2bd633}
+  .bar-banner img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover;object-position:center 40%}
+  .bar-banner figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 14px;background:linear-gradient(180deg,transparent,#000c);font-weight:600}
+  @media(max-width:640px){.bar-banner img{aspect-ratio:4/3}}
+  .cocktail-menu{margin:0 0 22px;border-radius:var(--radius);overflow:hidden;border:1px solid #ff2bd666;box-shadow:0 0 30px #ff2bd644;background:#0a0612}
+  .cocktail-menu img{display:block;width:100%;height:auto}
+  .deal-banner{display:inline-block;padding:10px 18px;border-radius:999px;border:1px solid #ffcf4a88;background:#ffcf4a1a;color:var(--gold);margin-bottom:18px;font-size:.95rem}
+  .cnames{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+  @media(max-width:560px){.cnames{grid-template-columns:repeat(2,1fr);gap:8px}.cn{padding:9px 12px!important;font-size:.92rem!important}}
+  .cn{padding:12px 16px;border-radius:12px;border:1px solid #ff2bd655;background:linear-gradient(160deg,#ff2bd622,#140a26 70%);font-family:Georgia,serif;font-size:1.05rem}
+
+  .mule{display:flex;gap:16px;align-items:center;margin-top:18px;max-width:560px;border:1px solid #ff2bd655;border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#ff2bd622,#140a26 70%)}
+  .mule img{flex:0 0 210px;width:210px;height:132px;object-fit:cover;display:block}
+  .mule>div{padding:12px 18px 12px 0}
+  .mule h4{font-family:Georgia,serif;font-size:1.1rem;margin-bottom:2px}
+  .mule p{color:var(--muted);font-size:.9rem}
+  @media(max-width:480px){.mule{flex-direction:column;align-items:stretch;gap:0}.mule img{width:100%;flex:none;height:170px}.mule>div{padding:12px 16px 14px}}
+
+  /* hours */
+  .hours{max-width:420px}
+  .hours div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #ffffff14}
+
+  /* contact */
+  .contact{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}
+  .map{width:100%;height:300px;border:0;border-radius:var(--radius);filter:invert(.9) hue-rotate(180deg) saturate(.7)}
+  footer{padding:36px 0;border-top:1px solid #ffffff14;color:var(--muted);font-size:.85rem;text-align:center}
+
+  /* sticky mobile CTA */
+  .float{position:fixed;right:16px;bottom:16px;z-index:30}
+  .float .btn{box-shadow:0 6px 28px #000a}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">THE FABULOUS <span>VEGAS</span> CLUB</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#drinks">Drinks</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-slides" aria-hidden="true">
+    <img src="img/hero-outside.jpg" alt="" fetchpriority="high">
+    <img src="img/hero-bar.jpg" alt="">
+    <img src="img/hero-courtyard.jpg" alt="">
+  </div>
+  <div class="wrap">
+    <span class="pill"><span class="dot"></span> Westdene, Bloemfontein &middot; <span class="stars">&#9733;</span> 4.3 on Google</span>
+    <h1 class="sr-only">The Fabulous Vegas Club</h1>
+    <img class="hero-logo" src="vegas-logo.png" alt="Welcome to Fabulous Vegas Club" width="972" height="700">
+    <p>Good food, loud lights and live matches on our very big screen. Your table is waiting.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://wa.me/27814269232?text=Hi%2C%20I%27d%20like%20to%20book%20a%20table%20at%20The%20Fabulous%20Vegas%20Club" target="_blank" rel="noopener">Book on WhatsApp</a>
+      <a class="btn ghost" href="#menu">See the menu</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">Welcome</div>
+    <h2>Dinner, drinks, and then some</h2>
+    <p class="lead">A restaurant by evening and a party by night. Come for a proper plate, stay for the cocktails, the music and the neon. <span class="todo">[Owner: add 2&ndash;3 sentences in your own words about the place and its story.]</span></p>
+    <div class="grid">
+      <div class="card"><div class="tag">Eat</div><h3>Hearty plates</h3><p>Grills, chips and fresh salads made to share or to keep to yourself.</p></div>
+      <div class="card"><div class="tag">Drink</div><h3>Cocktails &amp; more</h3><p>Colourful cocktails and a full bar for the whole night.</p></div>
+      <div class="card"><div class="tag">Play</div><h3>Games &amp; big screen</h3><p>Slot machines, music and live matches on our very big screen, with a crowd that knows how to have a good time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Menu</div>
+    <h2>What's on the table</h2>
+    <p class="lead">Burgers, pizzas, steaks, wings and more. Tap a category to browse.</p>
+
+    <div class="video-card">
+      <video autoplay muted loop playsinline controls preload="metadata" poster="img/food-poster.jpg" aria-label="A look inside the Vegas kitchen and the dishes we serve">
+        <source src="food.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="special wide" style="margin-bottom:38px">
+      <div class="media">
+        <video autoplay muted loop playsinline preload="auto" poster="img/pizza-wine-poster.jpg" aria-label="Large pizza with wine for R180">
+          <source src="pizza-wine.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="body">
+        <span class="when">Every day</span>
+        <h4>Pizza &amp; Wine</h4>
+        <p class="deal">Large pizza with wine for <span class="price">R180</span></p>
+        <p>A match made in heaven, at a price that's pure perfection.</p>
+        <div class="actions"><a class="btn primary" href="https://wa.me/27814269232?text=Hi%2C%20I%27d%20like%20to%20book%20a%20table%20at%20The%20Fabulous%20Vegas%20Club" target="_blank" rel="noopener">Book a table</a></div>
+      </div>
+    </div>
+
+    <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+      <button class="tab active" role="tab" data-tab="burgers">Burgers</button>
+      <button class="tab" role="tab" data-tab="baskets">Baskets &amp; Wings</button>
+      <button class="tab" role="tab" data-tab="pizzas">Pizzas</button>
+      <button class="tab" role="tab" data-tab="mains">Mains</button>
+      <button class="tab" role="tab" data-tab="braai">Braai Platters</button>
+      <button class="tab" role="tab" data-tab="sides">Sides</button>
+    </div>
+
+    <div class="menu-panel active" id="tab-burgers" role="tabpanel">
+      <h3 class="menu-cat">Burgers</h3>
+      <p class="menu-note">Served with your choice of chips, salad or veggies</p>
+      <div class="menu-list">
+        <div class="menu-item"><div><b>Cheese Burger</b><small>150g beef or chicken patty, fried onion, lettuce, tomato &amp; ranch dressing</small></div><div class="price">R80</div></div>
+        <div class="menu-item"><div><b>The Big Burger</b><small>150g beef or chicken patty, bacon, avo, feta, fried onion, lettuce, tomato &amp; ranch dressing</small></div><div class="price">R90</div></div>
+        <div class="menu-item"><div><b>The Big Blue Burger</b><small>150g beef or chicken patty, fried onion, lettuce, tomato &amp; blue cheese sauce</small></div><div class="price">R94</div></div>
+        <div class="menu-item"><div><b>Classic Chicken Burger</b><small>150g crumbed chicken breast fillet, cheese, lettuce, tomato, 2 chilli cheese poppers &amp; ranch dressing</small></div><div class="price">R94</div></div>
+        <div class="menu-item"><div><b>Bacon &amp; Cheese Burger</b><small>150g beef or chicken patty, fried onion, lettuce, tomato &amp; ranch dressing</small></div><div class="price">R84</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="tab-baskets" role="tabpanel">
+      <h3 class="menu-cat">Baskets</h3>
+      <div class="menu-list">
+        <div class="menu-item"><div><b>Basket for 2</b><small>4 spring rolls, 8 wings, 4 cheese grillers, 4 chicken strips, chips</small></div><div class="price">R159</div></div>
+        <div class="menu-item"><div><b>Basket for 4</b><small>8 spring rolls, 16 wings, 8 cheese grillers, 8 chicken strips, chips</small></div><div class="price">R299</div></div>
+        <div class="menu-item"><div><b>Basket for 8</b><small>16 spring rolls, 32 wings, 16 cheese grillers, 16 chicken strips, chips</small></div><div class="price">R599</div></div>
+      </div>
+      <h3 class="menu-cat" style="margin-top:34px">Wings</h3>
+      <div class="menu-list">
+        <div class="menu-item"><div><b>8 Wings</b></div><div class="price">R75</div></div>
+        <div class="menu-item"><div><b>16 Wings</b></div><div class="price">R145</div></div>
+        <div class="menu-item"><div><b>32 Wings</b></div><div class="price">R289</div></div>
+        <div class="menu-item"><div><b>48 Wings</b></div><div class="price">R399</div></div>
+        <div class="menu-item"><div><b>64 Wings</b></div><div class="price">R549</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="tab-pizzas" role="tabpanel">
+      <h3 class="menu-cat">Pizzas</h3>
+      <div class="menu-list">
+        <div class="menu-item"><div><b>Vegas Pizza</b><small>Mozzarella, bacon, mushroom, peppadew, feta, green pepper, russian, garlic</small></div><div class="price">R134</div></div>
+        <div class="menu-item"><div><b>BBQ Chicken</b><small>Mozzarella, chicken, mushroom, peppadew, green pepper, red onion, BBQ or peri-peri base</small></div><div class="price">R124</div></div>
+        <div class="menu-item"><div><b>Vegetarian</b><small>Mozzarella, mushroom, peppadew, green pepper, red onion, feta, olives</small></div><div class="price">R104</div></div>
+        <div class="menu-item"><div><b>Hawaiian</b><small>Mozzarella, pineapple, ham</small></div><div class="price">R104</div></div>
+        <div class="menu-item"><div><b>Bacon &amp; Olives</b><small>Mozzarella, bacon, mushroom, green pepper, olives</small></div><div class="price">R114</div></div>
+        <div class="menu-item"><div><b>Margarita</b><small>Mozzarella</small></div><div class="price">R84</div></div>
+        <div class="menu-item"><div><b>Meat Lovers</b><small>Mozzarella, salami, bacon, steak, onion, green pepper, BBQ sauce</small></div><div class="price">R164</div></div>
+        <div class="menu-item"><div><b>Mexican</b><small>Mozzarella, steak, onion, green pepper, peppadew, peri-peri sauce</small></div><div class="price">R124</div></div>
+        <div class="menu-item"><div><b>Lolita</b><small>Mozzarella, mushroom, bacon, garlic</small></div><div class="price">R110</div></div>
+        <div class="menu-item"><div><b>Regina</b><small>Mozzarella, mushroom, ham</small></div><div class="price">R104</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="tab-mains" role="tabpanel">
+      <h3 class="menu-cat">Mains</h3>
+      <p class="menu-note">Served with your choice of chips, salad or veggies</p>
+      <div class="menu-list">
+        <div class="menu-item"><div><b>Ladies Rump Steak 200g</b></div><div class="price">R99</div></div>
+        <div class="menu-item"><div><b>Rump Steak 300g</b></div><div class="price">R119</div></div>
+        <div class="menu-item"><div><b>T-Bone Steak 400g</b><small>With grilled mushroom on top</small></div><div class="price">R129</div></div>
+        <div class="menu-item"><div><b>Ribs</b><small>With grilled mushroom on top</small></div><div class="price">R145</div></div>
+        <div class="menu-item"><div><b>Sauces</b><small>Mushroom, pepper, cheese, garlic, blue cheese, lemon butter, hot peri-peri</small></div><div class="price">R20</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="tab-braai" role="tabpanel">
+      <h3 class="menu-cat">Braai Platters</h3>
+      <p class="menu-note">Selected meats marinated in Vegas signature sauces, with salsa or tomato gravy. Sides charged separately.</p>
+      <div class="menu-list">
+        <div class="menu-item"><div><b>Braai Platter for 1</b><small>1x beef steak, 1x pork/lamb, 2x sausages</small></div><div class="price">R140</div></div>
+        <div class="menu-item"><div><b>Braai Platter for 2</b><small>2x beef steak, 2x pork/lamb, 3x sausages</small></div><div class="price">R280</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="tab-sides" role="tabpanel">
+      <h3 class="menu-cat">Sides</h3>
+      <p class="menu-note">Sides are charged separately</p>
+      <div class="menu-list">
+        <div class="menu-item"><div><b>Chips</b></div><div class="price">R34</div></div>
+        <div class="menu-item"><div><b>Side Salad</b></div><div class="price">R25</div></div>
+        <div class="menu-item"><div><b>Greek Salad</b></div><div class="price">R55</div></div>
+        <div class="menu-item"><div><b>Chicken Salad</b></div><div class="price">R85</div></div>
+        <div class="menu-item"><div><b class="todo">[Item name hidden in screenshot]</b><small>&hellip;creamed spinach</small></div><div class="price">R35</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="drinks" class="drinks">
+  <div class="wrap">
+    <div class="eyebrow">The bar</div>
+    <div class="drinks-head">
+      <svg viewBox="0 0 64 64" fill="none" stroke="#ff2bd6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 10h44L32 34z"/><path d="M32 34v18"/><path d="M20 54h24"/><path d="M42 6l8-4"/><circle cx="46" cy="14" r="3" stroke="#22e6ff"/>
+      </svg>
+      <h2 class="glow">Drinks &amp; Cocktails</h2>
+    </div>
+    <p class="lead" style="margin-top:10px">Colourful cocktails, cold beers and a full bar, every day until 4am. <span class="todo">[Owner: add the real drinks list and prices below.]</span></p>
+
+    <div class="sub-title">Specials</div>
+    <div class="special-grid">
+      <div class="special">
+        <div class="media"><span class="ribbon">Free</span><img src="img/hubbly.jpg" alt="Hookah pipe with pomegranates under the Vegas Club sign" loading="lazy"></div>
+        <div class="body">
+          <span class="when">Five nights a week</span>
+          <h4>Free Hubbly</h4>
+          <p>Hubbly is free on these nights. Reserve your table on <a href="tel:+27814269232" style="color:var(--cyan)">081 426 9232</a>.</p>
+          <div class="days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Sun</span></div>
+        </div>
+      </div>
+      <div class="special">
+        <div class="media"><span class="ribbon">2 for 1</span><img src="img/cocktail.jpg" alt="Strawberry cocktail with fresh mint" loading="lazy" style="object-position:center 8%"></div>
+        <div class="body">
+          <span class="when">Every day &middot; 1pm &ndash; 8pm</span>
+          <h4>Buy 1 Get 1 Free</h4>
+          <p class="deal">On all cocktails</p>
+        </div>
+      </div>
+      <div class="special">
+        <div class="media"><img src="img/tequila.jpg" alt="Three bottles of Olmeca Altos reposado tequila" loading="lazy" style="object-position:center 25%"></div>
+        <div class="body">
+          <span class="when">Olmeca Altos &middot; 100% agave</span>
+          <h4>Altos Tequila</h4>
+          <ul>
+            <li><span>6 shots</span><span class="price">R125</span></li>
+            <li><span>Bottle</span><span class="price">R850</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="special">
+        <div class="media"><span class="ribbon">Shooters</span><img src="img/jager-ad.jpg" alt="J&auml;germeister bottle with two frosted shot glasses" loading="lazy" style="aspect-ratio:1/1"></div>
+        <div class="body">
+          <span class="when">J&auml;germeister</span>
+          <h4>5 J&auml;ger Shooters</h4>
+          <p class="deal">5 shots for <span class="price">R100</span></p>
+        </div>
+      </div>
+      <div class="special">
+        <div class="media"><span class="ribbon">Wednesdays</span><img src="img/draught.jpg" alt="Three draught beers: Castle Lite, Stella Artois and Carling Black Label" loading="lazy"></div>
+        <div class="body">
+          <span class="when">Every Wednesday &middot; 11am &ndash; 8pm</span>
+          <h4>Draught Special</h4>
+          <ul>
+            <li><span>Castle Lite 500ml</span><span class="price">R25</span></li>
+            <li><span>Black Label 500ml</span><span class="price">R25</span></li>
+            <li><span>Stella Artois 500ml</span><span class="price">R30</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="special">
+        <div class="media"><img src="img/brandy.jpg" alt="Two glasses of brandy and coke next to a can of Coca-Cola" loading="lazy"></div>
+        <div class="body">
+          <span class="when todo" style="align-self:flex-start">[days / times]</span>
+          <h4>Double Brandy &amp; Coke</h4>
+          <p class="deal" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">2 double brandies with a coke <span class="price todo">R&nbsp;---</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-title">Cocktails</div>
+    <div class="cocktail-feature">
+      <div>
+        <p class="deal-banner"><strong>Buy 1 get 1 free</strong> on all cocktails, every day 1pm &ndash; 8pm</p>
+        <figure class="cocktail-menu">
+          <img src="img/cocktail-menu.jpg" alt="Our cocktails: Pi&ntilde;a Colada, Strawberry Daiquiri, Mojito, High Roller, Margarita, Long Island Iced Tea, Cosmopolitan, J&auml;germeister Mule, Blue Suede Cherry, Not So Black Jack and Sin City Sours" loading="lazy">
+        </figure>
+        <div class="cnames">
+        <div class="cn">Pi&ntilde;a Colada</div>
+        <div class="cn">Strawberry Daiquiri</div>
+        <div class="cn">Mojito</div>
+        <div class="cn">High Roller</div>
+        <div class="cn">Margarita</div>
+        <div class="cn">Long Island Iced Tea</div>
+        <div class="cn">Cosmopolitan</div>
+        <div class="cn">J&auml;germeister Mule</div>
+        <div class="cn">Blue Suede Cherry</div>
+        <div class="cn">Not So Black Jack</div>
+        <div class="cn">Sin City Sours</div>
+        </div>
+        <div class="mule">
+          <img src="img/jager-mule.jpg" alt="A J&auml;germeister Mule with lime and a cherry, next to the bottle" loading="lazy">
+          <div>
+            <h4>J&auml;germeister Mule</h4>
+            <p>One of our house cocktails, and part of the buy 1 get 1 free deal.</p>
+          </div>
+        </div>
+        <p class="menu-note todo" style="margin-top:18px;display:inline-block">[Owner: add cocktail price(s)]</p>
+      </div>
+    </div>
+
+    <div class="sub-title">The full bar</div>
+    <div class="bar-grid">
+      <div class="bar-card">
+        <h4>Shooters</h4>
+        <div class="menu-item"><div><b class="todo">[Shooter]</b></div><div class="price todo">R&nbsp;---</div></div>
+        <div class="menu-item"><div><b class="todo">[Shooter]</b></div><div class="price todo">R&nbsp;---</div></div>
+      </div>
+      <div class="bar-card">
+        <h4>Beer &amp; Cider</h4>
+        <div class="menu-item"><div><b class="todo">[Beer / cider]</b></div><div class="price todo">R&nbsp;---</div></div>
+        <div class="menu-item"><div><b class="todo">[Beer / cider]</b></div><div class="price todo">R&nbsp;---</div></div>
+      </div>
+      <div class="bar-card">
+        <h4>Spirits &amp; Mixers</h4>
+        <div class="menu-item"><div><b class="todo">[Spirit]</b></div><div class="price todo">R&nbsp;---</div></div>
+        <div class="menu-item"><div><b class="todo">[Spirit]</b></div><div class="price todo">R&nbsp;---</div></div>
+      </div>
+      <div class="bar-card">
+        <h4>Wine &amp; Bubbles</h4>
+        <div class="menu-item"><div><b class="todo">[Wine]</b></div><div class="price todo">R&nbsp;---</div></div>
+        <div class="menu-item"><div><b class="todo">[Wine]</b></div><div class="price todo">R&nbsp;---</div></div>
+      </div>
+      <div class="bar-card">
+        <h4>Soft Drinks</h4>
+        <div class="menu-item"><div><b class="todo">[Soft drink]</b></div><div class="price todo">R&nbsp;---</div></div>
+        <div class="menu-item"><div><b class="todo">[Soft drink]</b></div><div class="price todo">R&nbsp;---</div></div>
+      </div>
+    </div>
+
+    <div class="actions" style="margin-top:34px">
+      <a class="btn primary" href="https://wa.me/27814269232?text=Hi%2C%20I%27d%20like%20to%20book%20a%20table%20at%20The%20Fabulous%20Vegas%20Club" target="_blank" rel="noopener">Book a table</a>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <div class="eyebrow">What's on</div>
+    <h2>Nights worth showing up for</h2>
+    <p class="lead">Follow <a href="https://www.instagram.com/clubvegas_bfn" target="_blank" rel="noopener" style="color:var(--cyan)">@clubvegas_bfn</a> for the latest.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+      <div class="card"><div class="tag">Mon, Tue, Wed, Thu &amp; Sun</div><h3>Free Hubbly</h3><p>Hubbly is free on these nights. Reserve your table on 081 426 9232.</p></div>
+      <div class="card"><div class="tag">Live sport</div><h3>Live matches on the big screen</h3><p>Catch the game on our very big screen, with a drink in hand and a crowd to share it with.</p></div>
+      <div class="card"><div class="tag">Every Wednesday</div><h3>Draught Special</h3><p>Castle Lite and Black Label R25, Stella R30 (500ml), from 11am to 8pm.</p></div>
+      <div class="card"><div class="tag">Every day</div><h3>Pizza &amp; Wine</h3><p>A large pizza with wine for R180.</p></div>
+      <div class="card"><div class="tag">Every day &middot; 1pm &ndash; 8pm</div><h3>Cocktail 2-for-1</h3><p>Buy 1 get 1 free on all cocktails.</p></div>
+      <div class="card"><div class="tag">Private</div><h3>Birthdays &amp; functions</h3><p>Planning something big? Message us to book the venue.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Gallery</div>
+    <h2>The vibe</h2>
+    <p class="lead">A look around. For more, follow <a href="https://www.instagram.com/clubvegas_bfn" target="_blank" rel="noopener" style="color:var(--cyan)">@clubvegas_bfn</a>.</p>
+    <div class="gallery">
+      <div class="tile">
+        <video muted loop playsinline preload="none" poster="img/dance-poster.jpg" aria-label="The dance floor at Vegas Club">
+          <source src="dance-floor.mp4" type="video/mp4">
+        </video>
+        <div class="label">Dance floor<small>Late nights, loud lights</small></div>
+      </div>
+      <div class="tile slots" role="img" aria-label="Illustration of a slot machine">
+        <div class="machine">
+          <div class="m-top">JACKPOT</div>
+          <div class="m-body">
+            <div class="m-reels"><div class="reel"><div class="strip" style="--d:1.5s"><span style="color:#d4141c">7</span><span style="color:#d4141c">&#9830;</span><span style="color:#d99a00">&#9733;</span><span><b class="bar">BAR</b></span><span style="color:#e0218a">&#9829;</span><span style="color:#d4141c">7</span><span style="color:#d4141c">7</span><span style="color:#d4141c">&#9830;</span><span style="color:#d99a00">&#9733;</span><span><b class="bar">BAR</b></span><span style="color:#e0218a">&#9829;</span><span style="color:#d4141c">7</span></div></div><div class="reel"><div class="strip" style="--d:1.9s"><span style="color:#d4141c">&#9830;</span><span style="color:#e0218a">&#9829;</span><span style="color:#d4141c">7</span><span style="color:#d99a00">&#9733;</span><span><b class="bar">BAR</b></span><span style="color:#d4141c">&#9830;</span><span style="color:#d4141c">&#9830;</span><span style="color:#e0218a">&#9829;</span><span style="color:#d4141c">7</span><span style="color:#d99a00">&#9733;</span><span><b class="bar">BAR</b></span><span style="color:#d4141c">&#9830;</span></div></div><div class="reel"><div class="strip" style="--d:2.3s"><span style="color:#d99a00">&#9733;</span><span style="color:#d4141c">7</span><span><b class="bar">BAR</b></span><span style="color:#e0218a">&#9829;</span><span style="color:#d4141c">&#9830;</span><span style="color:#d99a00">&#9733;</span><span style="color:#d99a00">&#9733;</span><span style="color:#d4141c">7</span><span><b class="bar">BAR</b></span><span style="color:#e0218a">&#9829;</span><span style="color:#d4141c">&#9830;</span><span style="color:#d99a00">&#9733;</span></div></div></div>
+            <div class="m-lights"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="label">Games room<small>Slot machines</small></div>
+      </div>
+      <div class="tile fade">
+        <img src="img/food-platter.jpg" alt="Mixed grill platter with steak, ribs and boerewors" loading="lazy">
+        <img src="img/food-steak.jpg" alt="Grilled steak on a wooden board with chips" loading="lazy">
+        <img src="img/food-wings.jpg" alt="Sticky grilled chicken wings with chips" loading="lazy">
+        <div class="label">Food<small>Grills, wings, burgers and more</small></div>
+      </div>
+      <div class="tile">
+        <img src="img/pina-colada.jpg" alt="A Pi&ntilde;a Colada with pineapple and a cherry" loading="lazy">
+        <div class="label">Cocktails<small>Buy 1 get 1 free, every day</small></div>
+      </div>
+      <div class="tile screen" role="img" aria-label="Illustration of a big screen showing a live football match">
+        <svg viewBox="0 0 200 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="pitch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1fa35a"/><stop offset="1" stop-color="#0f6b3a"/></linearGradient></defs>
+          <rect x="12" y="52" width="176" height="108" rx="8" fill="#05070f" stroke="#22e6ff" stroke-width="2.5"/>
+          <rect x="21" y="61" width="158" height="90" rx="3" fill="url(#pitch)"/>
+          <g stroke="#ffffffcc" stroke-width="1.2" fill="none">
+            <rect x="27" y="67" width="146" height="78"/><line x1="100" y1="67" x2="100" y2="145"/><circle cx="100" cy="106" r="14"/>
+            <rect x="27" y="88" width="18" height="36"/><rect x="155" y="88" width="18" height="36"/>
+          </g>
+          <circle cx="126" cy="98" r="3.2" fill="#fff"/>
+          <rect x="27" y="67" width="34" height="14" rx="3" fill="#e5191f"/>
+          <text x="44" y="77.4" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="9" fill="#fff">LIVE</text>
+          <path d="M88 160h24l6 18H82z" fill="#1a2140"/><rect x="64" y="178" width="72" height="6" rx="3" fill="#1a2140"/>
+        </svg>
+        <div class="label">Live matches<small>On our very big screen</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="eyebrow">Visit</div>
+    <h2>Find us</h2>
+    <div class="contact">
+      <div>
+        <p class="lead" style="margin-bottom:18px">84 Kellner St, Westdene<br>Bloemfontein<br>Reservations: <a href="tel:+27814269232" style="color:var(--cyan)">081 426 9232</a></p>
+        <div class="hours">
+          <div><span>Every day</span><span>11:00 am &ndash; 4:00 am</span></div>
+        </div>
+        <div class="actions" style="margin-top:22px">
+          <a class="btn primary" href="https://wa.me/27814269232" target="_blank" rel="noopener">WhatsApp us</a>
+          <a class="btn ghost" href="tel:+27814269232">Call us</a>
+          <a class="btn ghost" href="https://www.instagram.com/clubvegas_bfn" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <iframe class="map" title="Map to The Fabulous Vegas Club" loading="lazy"
+        src="https://www.google.com/maps?q=84+Kellner+St,+Westdene,+Bloemfontein&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr"></span> The Fabulous Vegas Club &middot; Please drink responsibly. 18+ only.</div> n3
+</footer>
+
+<div class="float"><a class="btn primary" href="https://wa.me/27814269232" target="_blank" rel="noopener">Book a table</a></div>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.documentElement.classList.add('js');
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false')});
+    document.querySelectorAll('.menu-panel').forEach(function(p){p.classList.remove('active')});
+    t.classList.add('active'); t.setAttribute('aria-selected','true');
+    document.getElementById('tab-'+t.dataset.tab).classList.add('active');
+  });
+});
+
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('video:not(.hero-video)'));
+  if(!('IntersectionObserver' in window)){return}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){var pr=v.play(); if(pr&&pr.catch){pr.catch(function(){})}}
+      else{v.pause()}
+    });
+  },{threshold:.25});
+  vids.forEach(function(v){io.observe(v)});
+})();
+</script>
+</body>
+</html>
